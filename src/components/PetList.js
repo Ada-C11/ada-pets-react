@@ -5,7 +5,6 @@ import PetCard from './PetCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PetList = (props) => {
-  console.log(props);
   const { pets, onSelectPet, onDeletePet } = props;
   // You may not have seen ".flatMap" before.
   //
