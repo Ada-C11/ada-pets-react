@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import PetList from './components/PetList';
 import PetDetails from './components/PetDetails';
 import SearchBar from './components/SearchBar';
@@ -7,16 +9,46 @@ import NewPetForm from './components/NewPetForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import pets from './data/pets.json';
+const PET_API_URL = 'https://petdibs.herokuapp.com/pets';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      petList: pets,
+      petList: [],
       currentPet: undefined,
     };
+  }
+
+  componentDidMount() {
+    axios.get(PET_API_URL)
+      .then((response) => {
+        //console.log(response.data);
+
+        const petList = response.data.map((pet) => {
+          const newPet = {
+            name: 'Madonna',
+            ...pet,
+            location: 'Seattle, WA',
+            species: pet.breed ? pet.breed.toLowerCase() : 'dog',
+            about: pet.about ? pet.about : '',
+            images: pet.img ? [pet.img] : ['https://fortunedotcom.files.wordpress.com/2019/01/boo.jpg'],
+
+          }
+          return newPet;
+        }).splice(0, 10);
+
+        console.log(petList);
+
+        this.setState({
+          petList,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
   }
 
   onSelectPet = (petId) => {
@@ -39,7 +71,7 @@ class App extends Component {
     const petIds = this.state.petList.map(pet => pet.id)
 
     this.setState({
-      petList: [...this.state.petList, {...pet, id: Math.max(...petIds) + 1}]
+      petList: [...this.state.petList, { ...pet, id: Math.max(...petIds) + 1 }]
     });
   }
 
@@ -66,7 +98,7 @@ class App extends Component {
             pets={petList}
             onSelectPet={this.onSelectPet}
             onDeletePet={this.onDeletePet}
-            queryString={this.state.queryString}/>
+            queryString={this.state.queryString} />
         </section>
         <section className="new-pet-form-wrapper">
           <NewPetForm addPetCallback={this.addPetCallback} />
