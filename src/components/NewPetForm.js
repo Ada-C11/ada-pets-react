@@ -11,14 +11,14 @@ class NewPetForm extends Component {
     this.cleared = {
       name: "",
       species: "",
-      location: "", 
-      about: "", 
+      location: "",
+      about: "",
       images: ""
     };
 
-    this.state = {...this.cleared}
+    this.state = { ...this.cleared }
   }
-  
+
   addPet = (event) => {
     event.preventDefault();
 
@@ -26,60 +26,64 @@ class NewPetForm extends Component {
 
     this.props.addPetCallback(pet)
 
-    this.setState({...this.cleared});
+    this.setState({ ...this.cleared });
   }
 
   onInputChange = (event) => {
     const updatedState = {};
-  
+
     const field = event.target.name;
     const value = event.target.value;
-  
+
     updatedState[field] = value;
     this.setState(updatedState);
   }
 
   render() {
     return (
-      <form  className="new-pet-form" onSubmit={this.addPet}>
+      <form
+        className="new-pet-form"
+        onSubmit={this.addPet}
+        className="great-form"
+      >
         <h3>Add a Pet</h3>
         <label>
-          Name: 
-          <input 
-            name="name" 
+          Name:
+          <input
+            name="name"
             type="text"
             value={this.state.name}
             onChange={this.onInputChange}></input>
         </label>
         <label>
           Species:
-          <select 
-            name="species"  
+          <select
+            name="species"
             value={this.state.species}
             onChange={this.onInputChange}>
-              <option value="">Please Select a Species</option>
-              <option value="cat">Cat</option>
-              <option value="dog">Dog</option>
-              <option value="other">Other</option>
+            <option value="">Please Select a Species</option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+            <option value="other">Other</option>
           </select>
         </label>
         <label>
-          Location: 
-          <input 
+          Location:
+          <input
             name="location"
             type="text"
             value={this.state.location}
             onChange={this.onInputChange}></input>
         </label>
         <label>
-          About: 
-          <textarea 
-            name="about" 
+          About:
+          <textarea
+            name="about"
             value={this.state.about}
             onChange={this.onInputChange} />
         </label>
         <label>
-          Images: 
+          Images:
           <input name="images" type="text" value={this.state.images} onChange={this.onInputChange}></input>
         </label>
         <input className="btn btn-success new-pet-form--submit" type="submit" name="submit" value="Add a Pet" />

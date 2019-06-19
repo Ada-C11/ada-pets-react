@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`New Pet Form it matches snapshot 1`] = `
+<form
+  className="great-form"
+  onSubmit={[Function]}
+>
+  <h3>
+    Add a Pet
+  </h3>
+  <label>
+    Name:
+    <input
+      name="name"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </label>
+  <label>
+    Species:
+    <select
+      name="species"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        Please Select a Species
+      </option>
+      <option
+        value="cat"
+      >
+        Cat
+      </option>
+      <option
+        value="dog"
+      >
+        Dog
+      </option>
+      <option
+        value="other"
+      >
+        Other
+      </option>
+    </select>
+  </label>
+  <label>
+    Location:
+    <input
+      name="location"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </label>
+  <label>
+    About:
+    <textarea
+      name="about"
+      onChange={[Function]}
+      value=""
+    />
+  </label>
+  <label>
+    Images:
+    <input
+      name="images"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </label>
+  <input
+    className="btn btn-success new-pet-form--submit"
+    name="submit"
+    type="submit"
+    value="Add a Pet"
+  />
+</form>
+`;
