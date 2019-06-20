@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    /* axios.get(PET_API_URL)
+    axios.get(PET_API_URL)
       .then((response) => {
         //console.log(response.data);
 
@@ -48,31 +48,25 @@ class App extends Component {
       .catch((error) => {
         console.log(error);
       })
-        id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired, 
-  species: PropTypes.string.isRequired, 
-  about: PropTypes.string, 
-  location: PropTypes.string,
-  onSelectPet: PropTypes.func
-      */
-    this.setState({
-      petList: [
-        {
-          id: 1,
-          name: 'Popeye1',
-          species: 'cat',
-          about: 'some pet',
-          location: 'Dallas, TX',
-        },
-        {
-          id: 2,
-          name: 'Stinker',
-          species: 'dog',
-          about: 'some pet',
-          location: 'Dallas, TX',
-        },
-      ],
-    })
+
+    // this.setState({
+    //   petList: [
+    //     {
+    //       id: 1,
+    //       name: 'Popeye1',
+    //       species: 'cat',
+    //       about: 'some pet',
+    //       location: 'Dallas, TX',
+    //     },
+    //     {
+    //       id: 2,
+    //       name: 'Stinker',
+    //       species: 'dog',
+    //       about: 'some pet',
+    //       location: 'Dallas, TX',
+    //     },
+    //   ],
+    // })
 
   }
 

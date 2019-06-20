@@ -1,0 +1,309 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`that it renders App with shallow rendering 1`] = `
+<main
+  className="App"
+>
+  <header
+    className="app-header"
+  >
+    <h1>
+      Ada Pets
+    </h1>
+  </header>
+  <section
+    className="search-bar-wrapper"
+  >
+    <SearchBar
+      searchCallback={[Function]}
+    />
+  </section>
+  <PetDetails />
+  <section
+    className="pet-list-wrapper"
+  >
+    <PetList
+      onDeletePet={[Function]}
+      onSelectPet={[Function]}
+      pets={
+        Array [
+          Object {
+            "about": "some pet",
+            "id": 1,
+            "location": "Dallas, TX",
+            "name": "Popeye1",
+            "species": "cat",
+          },
+          Object {
+            "about": "some pet",
+            "id": 2,
+            "location": "Dallas, TX",
+            "name": "Stinker",
+            "species": "dog",
+          },
+        ]
+      }
+    />
+  </section>
+  <section
+    className="new-pet-form-wrapper"
+  >
+    <NewPetForm
+      addPetCallback={[Function]}
+    />
+  </section>
+</main>
+`;
+
+exports[`will match the last snapshot with deep rendering 1`] = `
+<App>
+  <main
+    className="App"
+  >
+    <header
+      className="app-header"
+    >
+      <h1>
+        Ada Pets
+      </h1>
+    </header>
+    <section
+      className="search-bar-wrapper"
+    >
+      <SearchBar
+        searchCallback={[Function]}
+      >
+        <section>
+          <label>
+            Search 
+            <input
+              name="search"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </label>
+        </section>
+      </SearchBar>
+    </section>
+    <PetDetails>
+      <section
+        className="pet-details"
+      />
+    </PetDetails>
+    <section
+      className="pet-list-wrapper"
+    >
+      <PetList
+        onDeletePet={[Function]}
+        onSelectPet={[Function]}
+        pets={
+          Array [
+            Object {
+              "about": "some pet",
+              "id": 1,
+              "location": "Dallas, TX",
+              "name": "Popeye1",
+              "species": "cat",
+            },
+            Object {
+              "about": "some pet",
+              "id": 2,
+              "location": "Dallas, TX",
+              "name": "Stinker",
+              "species": "dog",
+            },
+          ]
+        }
+      >
+        <div
+          className="card-group"
+        >
+          <PetCard
+            about="some pet"
+            id={1}
+            key="1"
+            location="Dallas, TX"
+            name="Popeye1"
+            onDeletePet={[Function]}
+            onSelectPet={[Function]}
+            species="cat"
+          >
+            <div
+              className="card pet-card"
+            >
+              <section
+                className="pet-card--header"
+              >
+                🐈
+                 
+                1
+                 - 
+                Popeye1
+                <button
+                  className="btn btn-primary pet-card--select-pet-btn"
+                  onClick={[Function]}
+                >
+                  Select
+                </button>
+                <button
+                  aria-label="Close"
+                  className="btn btn-danger pet-card--close-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Close
+                </button>
+              </section>
+              <section
+                className="pet-card--body"
+              >
+                some pet
+              </section>
+              <section
+                className="pet-card--footer text-muted"
+              >
+                Dallas, TX
+              </section>
+            </div>
+          </PetCard>
+          <PetCard
+            about="some pet"
+            id={2}
+            key="2"
+            location="Dallas, TX"
+            name="Stinker"
+            onDeletePet={[Function]}
+            onSelectPet={[Function]}
+            species="dog"
+          >
+            <div
+              className="card pet-card"
+            >
+              <section
+                className="pet-card--header"
+              >
+                🐕
+                 
+                2
+                 - 
+                Stinker
+                <button
+                  className="btn btn-primary pet-card--select-pet-btn"
+                  onClick={[Function]}
+                >
+                  Select
+                </button>
+                <button
+                  aria-label="Close"
+                  className="btn btn-danger pet-card--close-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Close
+                </button>
+              </section>
+              <section
+                className="pet-card--body"
+              >
+                some pet
+              </section>
+              <section
+                className="pet-card--footer text-muted"
+              >
+                Dallas, TX
+              </section>
+            </div>
+          </PetCard>
+        </div>
+      </PetList>
+    </section>
+    <section
+      className="new-pet-form-wrapper"
+    >
+      <NewPetForm
+        addPetCallback={[Function]}
+      >
+        <form
+          className="great-form"
+          onSubmit={[Function]}
+        >
+          <h3>
+            Add a Pet
+          </h3>
+          <label>
+            Name:
+            <input
+              name="name"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </label>
+          <label>
+            Species:
+            <select
+              name="species"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                value=""
+              >
+                Please Select a Species
+              </option>
+              <option
+                value="cat"
+              >
+                Cat
+              </option>
+              <option
+                value="dog"
+              >
+                Dog
+              </option>
+              <option
+                value="other"
+              >
+                Other
+              </option>
+            </select>
+          </label>
+          <label>
+            Location:
+            <input
+              name="location"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </label>
+          <label>
+            About:
+            <textarea
+              name="about"
+              onChange={[Function]}
+              value=""
+            />
+          </label>
+          <label>
+            Images:
+            <input
+              name="images"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </label>
+          <input
+            className="btn btn-success new-pet-form--submit"
+            name="submit"
+            type="submit"
+            value="Add a Pet"
+          />
+        </form>
+      </NewPetForm>
+    </section>
+  </main>
+</App>
+`;
