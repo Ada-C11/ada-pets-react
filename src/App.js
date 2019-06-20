@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       petList: [],
       currentPet: undefined,
-      error: null
+      errorMessage: null,
     };
   }
 
