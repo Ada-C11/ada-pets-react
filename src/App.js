@@ -63,11 +63,32 @@ class App extends Component {
   }
 
   addPetCallback = (pet) => {
-    const petIds = this.state.petList.map(pet => pet.id)
+    // What is the structure of data that we need to send to the API? ... this is a very api-specific question!
+    const petDataToSendToApi = {
+      name: pet.name,
+      breed: pet.species,
+      about: pet.about,
+    };
 
-    this.setState({
-      petList: [...this.state.petList, {...pet, id: Math.max(...petIds) + 1}]
-    });
+    axios.post('https://petdibs.herokuapp.com/pets', petDataToSendToApi)
+      .then((response) => {
+        console.log("This is what response.data looks like from the API on a successful response", response.data)
+        let updatedPetList = this.state.petList;
+        updatedPetList.push({
+          name: pet.name,
+          species: pet.species,
+          about: pet.about,
+          id: response.data.id,
+        });
+        this.setState({
+          petList: updatedPetList,
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          errorMessage: error.message
+        });
+      });
   }
 
   searchCallback = (queryString) => {

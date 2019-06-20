@@ -32,7 +32,7 @@ const PetList = (props) => {
       } else {
         return [];
       }
-    }).slice(0, 9);
+    }).reverse().slice(0, 9);
 
   return (
     <div className="card-group">
